@@ -1,12 +1,6 @@
 package ru.netology;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.logevents.SelenideLogger;
-import com.github.javafaker.PhoneNumber;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 
@@ -23,11 +17,11 @@ public class CardDeliveryTest {
     void shouldDeliverCardAgain() {
 
         open("http://localhost:9999/");
-        String city = GenerateData.generateCity();
-        String planningDayFirst = GenerateData.generateDate();
-        String planningDaySecond = GenerateData.generateDate();
-        String name = GenerateData.generateName();
-        String phone = GenerateData.generatePhone();
+        var city = DataClass.generateCity();
+        var planningDayFirst = DataClass.generateDate();
+        var planningDaySecond = DataClass.generateDate();
+        var name = DataClass.generateName();
+        var phone = DataClass.generatePhone();
         DataClass data1 = new DataClass(city, planningDayFirst, name, phone);
 
         $("[data-test-id='city'] input").setValue(data1.getCity());
