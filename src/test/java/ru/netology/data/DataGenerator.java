@@ -1,8 +1,7 @@
-package ru.netology;
+package ru.netology.data;
 
 import com.github.javafaker.Faker;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
@@ -12,16 +11,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-
-public class DataClass {
-
-    private String city;
-    private String date;
-    private String name;
-    private String phone;
+public class DataGenerator {
 
     static Faker faker = new Faker(new Locale("ru"));
 
